@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/example_cache_db
+    username: admin
+    password: admin
+    hikari:
+      schema: example_cache_schema
+      connection-init-sql: CREATE SCHEMA IF NOT EXISTS example_cache_schema
+  jpa:
+    generate-ddl: true
+    show-sql: false
+app:
+  redis:
+    enable: false
+  cache:
+    cacheType: inMemory
+    cache-names:
+      - users
+      - userById
+    caches:
+      users:
+        expiry: 20s
+      userById:
+        expiry: 20s
