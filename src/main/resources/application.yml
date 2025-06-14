@@ -11,9 +11,9 @@ spring:
     show-sql: false
 app:
   redis:
-    enable: false
+    enable: true
   cache:
-    cacheType: inMemory
+    cacheType: redis
     cache-names:
       - users
       - userById
